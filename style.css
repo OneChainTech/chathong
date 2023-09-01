@@ -2,20 +2,25 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 18px;
+  /* 设置根元素的字体大小 */
+}
+
 body {
-  width: 360px;
-  /* height: 600px; */
+  width: 760px;
+  /* height: 700px; */
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
 }
 
 .chat-container {
   /* max-width: 600px; */
-  /* height: 600px; */
+  height: 80%;
   margin: 0 auto;
   padding: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px #ccc;
@@ -35,15 +40,18 @@ body {
 }
 
 .setting {
-  width: 24px;
-  height: 24px;
-  margin-left: 290px;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border-radius: 50%;
 }
 
 .copy {
-  width: 16px;
-  height: 16px;
-  margin-left: 300px;
+  width: 20px;
+  height: 20px;
+  margin-left: 700px;
+  margin-top: 8px;
 }
 
 #overlay {
@@ -118,7 +126,7 @@ body {
 .chat-input input {
   flex-grow: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 5px 0 0 5px;
 }
 
@@ -141,8 +149,8 @@ body {
 .prompt {
   flex: 0 0 auto;
   /* 防止自动缩放 */
-  width: 210px;
-  height: 110px;
+  width: 200px;
+  height: 100px;
   background-color: #53e9b0;
   margin-right: 10px;
   padding: 10px;

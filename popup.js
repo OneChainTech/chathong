@@ -2,7 +2,15 @@
 
 // 获取数据
 let apikey = localStorage.getItem('apikey');
-console.log(apikey)
+// console.log(apikey)
+
+if (localStorage.getItem('messagesinner')) {
+  document.getElementById('messages').innerHTML = localStorage.getItem('messagesinner');
+}
+
+if (localStorage.getItem('questions')) {
+  document.getElementById('questions').innerHTML = localStorage.getItem('questions');
+}
 
 function showOverlay() {
   var overlay = document.getElementById('overlay');
@@ -73,11 +81,11 @@ document.getElementById('chat').addEventListener('click', function() {
     if (question == '') return;
 
     document.getElementById('questions').innerHTML = question;
-    document.getElementById('messages').innerHTML = 'Input...';
+    document.getElementById('messages').innerHTML = '正在分析...';
     document.getElementById('input').value = '';
 
     chatgpt(question);
-    // flowise({ "question": '你是一名AI助理，请用中文回答用户的问题，输出内容格式美观' + question });
+    // flowise({ "question": question + "请用中文回答问题，如果不知道答案，请回复不太清楚" });
 
   }
 
@@ -111,6 +119,9 @@ async function chatgpt(question) {
 
   if (!response.body) return;
   const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
+
+  
+  localStorage.setItem('questions', document.getElementById('questions').innerHTML);
   while (true) {
     var { value, done } = await reader.read();
     if (done) break;
@@ -124,12 +135,13 @@ async function chatgpt(question) {
     }
 
     document.getElementById('messages').innerHTML += chunk;
+    localStorage.setItem('messagesinner', document.getElementById('messages').innerHTML);
   }
 }
 
 async function flowise(data) {
   const response = await fetch(
-    "https://flowise-uf8h.onrender.com/api/v1/prediction/6a2a6f6c-58af-4f8b-9d5b-48a9236f9b39",
+    "http://20.232.191.232:3000/api/v1/prediction/fc40f213-5a99-4832-ba88-9bff822b3f25",
     {
       method: "POST",
       headers: {
@@ -138,6 +150,7 @@ async function flowise(data) {
       body: JSON.stringify(data)
     }
   );
+
 
   document.getElementById('messages').innerHTML = "";
 

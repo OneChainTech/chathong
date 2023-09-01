@@ -11,10 +11,10 @@
 <body>
   <div class="chat-container">
     <img id="setting" src="setting.png" class="setting">
-    <div class="header">
+    <!-- <div class="header">
       <img src="icon.png" class="avatar">
-      <h3>Chatting with Hong</h3>
-    </div>
+      <h3>Chatting with AI assistant for information </h3>
+    </div> -->
     <div class="chat-history">
       <div class="message">
         <p id="questions">Hello, who are you?</p>
@@ -26,12 +26,14 @@
     </div>
     <h3>Instruction Examples:</h3>
     <div class="chat-prompt">
-      <div class="prompt">北京有什么美食? 可以写一篇美食攻略</div>
-      <div class="prompt">请检查以下智能合约是否存在上述漏洞。每个漏洞的存在或不存在分别用true和false表示。以类似的方式输出您的结论如：“Reentrancy: true”。</div>
+      <div class="prompt">北京有什么美食? 可以写一篇美食攻略.</div>
+      <div class="prompt">请检查以下智能合约代码是否存在漏洞，如有漏洞请指明漏洞所在函数位置.</div>
+      <div class="prompt">对于感冒症状，有理疗方法可缓解鼻塞和喉咙痛？</div>
       <div class="prompt">您是一名律师，请帮我简要介绍诉讼过程.</div>
     </div>
     <div class="chat-input">
-      <input id="input" type="text" placeholder="Type a message...">
+      <!-- <input id="input" type="text" placeholder="Type a message..."> -->
+      <textarea id="input" rows="6" cols="200"></textarea>
       <button id="chat">Send</button>
     </div>
   </div>
