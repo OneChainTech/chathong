@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "chathong",
+  "version": "4.0",
+  "description": "大语言模型应用实验室",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

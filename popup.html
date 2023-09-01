@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chat Page</title>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+
+</head>
+
+<body>
+  <div class="chat-container">
+    <img id="setting" src="setting.png" class="setting">
+    <div class="header">
+      <img src="icon.png" class="avatar">
+      <h3>Chatting with Hong</h3>
+    </div>
+    <div class="chat-history">
+      <div class="message">
+        <p id="questions">Hello, who are you?</p>
+      </div>
+      <img id="copy" src="copy.png" class="copy">
+      <div class="message right">
+        <p id="messages">AI assistant, you can choose / type a instruction to me.</p>
+      </div>
+    </div>
+    <h3>Instruction Examples:</h3>
+    <div class="chat-prompt">
+      <div class="prompt">北京有什么美食? 可以写一篇美食攻略</div>
+      <div class="prompt">请检查以下智能合约是否存在上述漏洞。每个漏洞的存在或不存在分别用true和false表示。以类似的方式输出您的结论如：“Reentrancy: true”。</div>
+      <div class="prompt">您是一名律师，请帮我简要介绍诉讼过程.</div>
+    </div>
+    <div class="chat-input">
+      <input id="input" type="text" placeholder="Type a message...">
+      <button id="chat">Send</button>
+    </div>
+  </div>
+  <div id="overlay" class="hidden">
+    <div id="settings">
+      <h3>Use OpenAI's official API key</h3>
+      <input id="apikey" type="text" placeholder="Input your API key...">
+      <button id="setkey">Save</button>
+      <div>
+        <img id="qrcode" src="qrcode.png" class="qrcode">
+      </div>
+    </div>
+  </div>
+  <script src="popup.js" type="module"></script>
+</body>
+
+</html>
