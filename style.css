@@ -165,3 +165,11 @@ body {
   height: 220px;
   margin-top: 20px;
 }
+
+#gptVersions {
+  text-align: left;
+  margin-left: 10px;
+  height: 30px;
+  width: 200px;
+  /* 修改高度 */
+}

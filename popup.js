@@ -2,6 +2,7 @@
 
 // 获取数据
 let apikey = localStorage.getItem('apikey');
+let modeltype = localStorage.getItem('modeltype');
 // console.log(apikey)
 
 if (localStorage.getItem('messagesinner')) {
@@ -16,6 +17,8 @@ function showOverlay() {
   var overlay = document.getElementById('overlay');
   overlay.classList.remove('hidden');
   document.getElementById('apikey').value = apikey;
+  if (modeltype)
+    document.getElementById("gptVersions").value = modeltype;
 }
 
 function hideOverlay() {
@@ -28,8 +31,10 @@ document.getElementById('setting').addEventListener('click', function() {
 });
 document.getElementById('setkey').addEventListener('click', function() {
   apikey = document.getElementById('apikey').value;
+  modeltype = document.getElementById("gptVersions").value;
   // 存储数据
   localStorage.setItem('apikey', apikey);
+  localStorage.setItem('modeltype', modeltype);
 
   hideOverlay();
 });
@@ -95,8 +100,11 @@ async function chatgpt(question) {
   // const OPENAI_API_KEY = '
   const OPENAI_API_KEY = apikey;
 
+  const modeltype = document.getElementById("gptVersions").value;
+  console.log(modeltype);
+
   const payload = {
-    model: 'gpt-4',
+    model: modeltype,
     messages: [
       { role: 'system', content: '你是一名AI助理，请用中文回答用户的问题，输出内容格式美观' },
       { role: 'user', content: question }
@@ -174,15 +182,3 @@ async function flowise(data) {
   // const result = await response.json();
   // return result;
 }
-
-
-
-
-
-
-
-
-
-
-
-

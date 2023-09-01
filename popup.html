@@ -10,18 +10,18 @@
 
 <body>
   <div class="chat-container">
-    <img id="setting" src="setting.png" class="setting">
-    <!-- <div class="header">
-      <img src="icon.png" class="avatar">
-      <h3>Chatting with AI assistant for information </h3>
-    </div> -->
+    <div class="header">
+      <!-- <img src="icon.png" class="avatar"> -->
+      <img id="setting" src="setting.png" class="setting">
+      <!-- <h3>Chatting with AI</h3> -->
+    </div>
     <div class="chat-history">
       <div class="message">
-        <p id="questions">Hello, who are you?</p>
+        <p id="questions">你好，AI小助手</p>
       </div>
       <img id="copy" src="copy.png" class="copy">
       <div class="message right">
-        <p id="messages">AI assistant, you can choose / type a instruction to me.</p>
+        <p id="messages">您好，请问有什么可以帮你 (模型默认 gpt-4.0 ,如果您是 gpt-3.5 Api Key ,可点击左上角头像进行模型配置)</p>
       </div>
     </div>
     <h3>Instruction Examples:</h3>
@@ -39,7 +39,12 @@
   </div>
   <div id="overlay" class="hidden">
     <div id="settings">
-      <h3>Use OpenAI's official API key</h3>
+      <h3>设置模型及对应的Apikey</h3>
+      <label id="gptVersionslabel" for="gptVersions">GPT Version</label>
+      <select id="gptVersions" name="gptVersions">
+        <option value="gpt-4" selected>GPT-4</option>
+        <option value="gpt-3.5-turbo">GPT-3.5-Turbo</option>
+      </select>
       <input id="apikey" type="text" placeholder="Input your API key...">
       <button id="setkey">Save</button>
       <div>
