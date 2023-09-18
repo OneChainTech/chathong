@@ -11,7 +11,7 @@
       <div class="header">
         <!-- <img src="icon.png" class="avatar"> -->
         <img id="setting" src="setting.png" class="setting" />
-        <!-- <h3>Chatting with AI</h3> -->
+        <!-- <h3>Chatting with hong</h3> -->
       </div>
       <div class="chat-history">
         <div class="message">
@@ -19,18 +19,14 @@
         </div>
         <img id="copy" src="copy.png" class="copy" />
         <div id="messageshead" class="message right">
-          <pre id="messages">
-您好，请问有什么可以帮你 (模型默认 gpt-4.0 ,如果您是 gpt-3.5 Api Key,可点击左上角头像进行模型配置)</pre
-          >
+          <pre id="messages">您好，请问有什么可以帮你 (模型默认 gpt-4.0 ,如果您是 gpt-3.5 Api Key,可点击左上角头像进行模型配置)</pre>
         </div>
       </div>
       <h3 id="instruction">Instruction Examples:</h3>
       <div id="promptlist">
         <div class="chat-prompt">
           <div class="prompt">北京有什么美食? 可以写一篇美食攻略.</div>
-          <div class="prompt">
-            请检查以下智能合约代码是否存在漏洞，如有漏洞请指明漏洞所在函数位置.
-          </div>
+          <div class="prompt">请检查以下智能合约代码是否存在漏洞，如有漏洞请指明漏洞所在函数位置.</div>
           <div class="prompt">对于感冒症状，有理疗方法可缓解鼻塞和喉咙痛？</div>
           <div class="prompt">您是一名律师，请帮我简要介绍诉讼过程.</div>
         </div>
@@ -44,14 +40,14 @@
     </div>
     <div id="overlay" class="hidden">
       <div id="settings">
-        <h3>设置模型及对应的Apikey</h3>
+        <h3>设置模型版本及对应的API key</h3>
         <label id="gptVersionslabel" for="gptVersions">GPT Version</label>
         <select id="gptVersions" name="gptVersions">
           <option value="gpt-4" selected>GPT-4</option>
           <option value="gpt-3.5-turbo">GPT-3.5-Turbo</option>
         </select>
         <input id="apikey" type="text" placeholder="Input your API key..." />
-        <button id="setkey">Save</button>
+        <button id="setkey">保存</button>
         <div>
           <img id="qrcode" src="qrcode.png" class="qrcode" />
         </div>

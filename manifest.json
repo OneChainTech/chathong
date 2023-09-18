@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "chathong",
-  "version": "6.6",
-  "description": "大语言模型应用实验室",
+  "version": "6.8",
+  "description": "基于ChatGPT技术，为您提供精准的文本生成服务、创新的逻辑推理能力和严谨的代码检查功能",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon.png"

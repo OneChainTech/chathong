@@ -85,7 +85,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  width: 100%;
+  width: 90%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -172,7 +172,7 @@ pre {
 .qrcode {
   width: 220px;
   height: 220px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #gptVersions {

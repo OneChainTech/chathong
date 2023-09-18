@@ -122,6 +122,7 @@ document.getElementById("chat").addEventListener("click", function () {
 
     chatgpt(question);
     // flowise({ "question": question + "请用中文回答问题，如果不知道答案，请回复不太清楚" });
+    instruction.click();
   }
 });
 
