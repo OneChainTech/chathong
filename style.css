@@ -40,8 +40,8 @@ body {
 }
 
 .setting {
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   margin-left: 10px;
   margin-bottom: 5px;
   border-radius: 50%;
@@ -170,9 +170,9 @@ pre {
 }
 
 .qrcode {
-  width: 220px;
-  height: 220px;
-  margin-top: 10px;
+  width: 230px;
+  height: 230px;
+  margin-top: 15px;
 }
 
 #gptVersions {
