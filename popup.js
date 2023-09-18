@@ -46,7 +46,7 @@ const prompts = document.querySelectorAll(".prompt");
 prompts.forEach((prompt) => {
   prompt.addEventListener("click", () => {
     const content = prompt.textContent;
-    console.log(content);
+    // console.log(content);
     document.getElementById("input").value = content;
   });
 });
@@ -165,7 +165,7 @@ async function chatgpt(question) {
   while (true) {
     var { value, done } = await reader.read();
 
-    console.log(done);
+    // console.log(done);
     if (done) break;
 
     const lines = value
