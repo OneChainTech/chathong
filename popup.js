@@ -123,6 +123,7 @@ document.getElementById("chat").addEventListener("click", function () {
   }
 });
 
+let history = [];
 async function chatgpt(question) {
   // const OPENAI_API_KEY = '
   const OPENAI_API_KEY = apikey;
@@ -130,15 +131,23 @@ async function chatgpt(question) {
   // const modeltype = document.getElementById("gptVersions").value;
   console.log(modeltype);
 
+  const messages = [
+    {
+      role: "system",
+      content: "你是一名AI助理，请用中文回答用户的问题，输出内容格式美观",
+    },
+  ];
+  if (history.length > 0) {
+    for (const [question, chunk] of history) {
+      messages.push({ role: "user", content: question });
+      messages.push({ role: "assistant", content: chunk });
+    }
+  }
+  messages.push({ role: "user", content: question });
+
   const payload = {
     model: modeltype,
-    messages: [
-      {
-        role: "system",
-        content: "你是一名AI助理，请用中文回答用户的问题，输出内容格式美观",
-      },
-      { role: "user", content: question },
-    ],
+    messages: messages,
     stream: true,
   };
 
@@ -166,7 +175,7 @@ async function chatgpt(question) {
     var { value, done } = await reader.read();
 
     // console.log(done);
-    if (done) break;
+    // if (done) break;
 
     const lines = value
       .toString()
@@ -175,7 +184,11 @@ async function chatgpt(question) {
     let chunk = "";
     for (const line of lines) {
       const message = line.replace("data: ", "");
-      if (message === "[DONE]") return;
+      if (message === "[DONE]") {
+        history.push([question, document.getElementById("messages").innerHTML]);
+        return;
+      }
+
       chunk += JSON.parse(message).choices[0].delta.content;
     }
 
