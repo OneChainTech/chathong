@@ -138,9 +138,9 @@ async function chatgpt(question) {
     },
   ];
   if (history.length > 0) {
-    for (const [question, chunk] of history) {
+    for (const [question, answer] of history) {
       messages.push({ role: "user", content: question });
-      messages.push({ role: "assistant", content: chunk });
+      messages.push({ role: "assistant", content: answer });
     }
   }
   messages.push({ role: "user", content: question });
